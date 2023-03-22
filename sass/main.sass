@@ -1,0 +1,252 @@
+@import vars
+@import fonts
+@import libs
+//default setting
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+ul
+	list-style: none
+	margin: 0
+	padding: 0
+
+a
+	&:hover
+		text-decoration: none
+		color: inherit
+
+button, select
+	&:focus
+		outline: none
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.15
+	font-family: 'Gotham Pro', sans-serif
+	overflow-x: hidden
+	color: $text
+
+.btn
+	outline: none
+	display: inline-flex
+	&:focus-visible
+		outline: none
+	&_primary
+		border: 2px solid #000
+		border-radius: 4px
+		padding: 5px 12px
+		font-size: 14px
+		color: #000
+		transition: .4s
+		&:hover
+			color: #fff
+			background-color: #000
+
+.ov-hidden
+	overflow: hidden
+//default setting end
+
+.header
+	height: 100vh
+	background-color: rgba(0,0,0,0.5)
+
+.hero
+	height: 716px
+	background-image: url(../img/heroimg.jpeg)
+	background-size: 100%
+	&_wrapper
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		height: 100%
+		padding-right: 70px
+	&_item + &_item
+		margin-top: 50px
+	&_item
+		width: 272px
+		color: #fff
+		&-title
+			line-height: 1
+			font-size: 24px
+			font-weight: 500
+			margin-bottom: 8px
+			img
+				height: 28px
+				width: auto
+		&-desc
+			font-size: 14px
+
+.config
+	padding: 50px 0
+	&_item + &_item
+		margin-top: 100px
+	&_item
+		display: flex
+		justify-content: space-between
+		&-left
+			white-space: nowrap
+			padding-top: 25px
+		&-button
+			.btn
+				width: 231px
+				justify-content: center
+		&-title
+			font-weight: 500
+			font-size: 26px
+			margin-bottom: 20px
+		&-right
+			width: 65%
+	&_carousel
+		margin-top: 50px
+		&-item
+			&:nth-child(2)
+				.config_carousel-dots
+					li:nth-child(2)
+						&::after
+							background: #000
+		&-img
+			height: 576px
+			img
+				border-radius: 22px
+				height: 100%
+				width: 100%
+		&-bottom
+			width: 62%
+			margin-left: auto
+			margin-right: auto
+		.slick-dots
+			display: flex
+			margin-top: 50px
+			li
+				position: relative
+				&::after
+					content: ''
+					position: absolute
+					left: 0
+					top: 0
+					width: 10px
+					height: 10px
+					background: #D0D1D2
+					border-radius: 50%
+				&.slick-active
+					&::after
+						background: #000
+			button
+				opacity: 0
+
+.advantage
+	height: 753px
+	background-image: url(../img/advantage.jpeg)
+	background-size: 100%
+	background-position: 0 45%
+	.container
+		height: 100%
+	&_items
+		height: 100%
+		display: flex
+		align-items: flex-end
+		justify-content: space-evenly
+		color: #fff
+	&_item
+		text-align: center
+		width: 272px
+		height: 180px
+		&-title
+			font-size: 22px
+			font-weight: 500
+			margin-bottom: 10px
+		&-desc
+			font-size: 12px
+
+.safe
+	padding: 50px 0
+	.config_item
+		&-right
+			width: 55%
+			font-size: 13px
+	&_bottom
+		margin-top: 50px
+		display: flex
+	&_video
+		width: 80%
+		position: relative
+		video
+			height: 90vh
+			width: 100%
+			object-fit: cover
+	&_items
+		position: absolute
+		bottom: 70px
+		width: 100%
+		display: flex
+		justify-content: center
+		color: #fff
+	&_item
+		width: 272px
+		text-align: center
+		&-title
+			font-size: 24px
+			font-weight: 500
+			margin-bottom: 10px
+		&-desc
+			font-size: 12px
+	&_item + &_item
+		margin-left: 35px
+	&_text
+		width: 20%
+		padding: 70px 20px 50px
+		&-title
+			font-size: 28px
+			font-weight: 500
+			margin-bottom: 25px
+		&-desc
+			font-size: 14px
+	&_text
+		display: flex
+		flex-direction: column
+		align-content: space-between
+	&_button
+		margin-top: auto
+			
+.cars
+	&_items
+		padding-left: 50px
+		display: flex
+		flex-direction: column
+		align-content: space-between
+		padding-top: 100px
+	&_top
+		height: 789px
+		background-image: url(../img/cars.jpeg)
+		background-size: 100%
+		background-position: center
+	&_item + &_item
+		margin-top: 50px
+	&_item
+		width: 272px
+		&-title
+			font-size: 24px
+			font-weight: 500
+			margin-bottom: 10px
+		&-desc
+			font-size: 12px
+	&_bottom
+		margin-top: 40px
+		.config_item-title
+			span
+				display: flex
+				font-size: 16px
+				margin-bottom: 5px
+@import media
